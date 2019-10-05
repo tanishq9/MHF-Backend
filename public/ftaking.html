@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Financial Stocktaking</title>
+    <style>
+        *{
+            padding: 0.2rem;
+        }
+        span{
+            color: #000;
+        }
+        .form-groupbox{
+            border: 0px solid #000;
+            padding: 20px 30px; 
+            -webkit-box-shadow: 10px 9px 27px 8px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 9px 27px 8px rgba(0,0,0,0.75);
+            box-shadow: 10px 9px 27px 8px rgba(0,0,0,0.75);
+        }
+        a{
+            color: #fff;
+        }
+        a:hover{
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-dark bg-dark">
+        <a href="index.html" class="icon-link">
+            <i class="fa fa-home"></i>
+        </a>
+        <p class="navbar-brand mb-0 h1 mx-auto">Financial Stocktaking</p>
+    </nav>    
+    <br>
+    <div class="container">
+        <form name="myform" class="form-groupbox">
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <label for="inputname"><span>Monthly Income<span></label>
+                    <input type="text" class="form-control" placeholder="Monthly Income">
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <label for="inputname"><span>Monthly Expenses</span></label>
+                    <input type="text" class="form-control" placeholder="Monthly Expenses">
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <label for="inputname"><span>Monthly Savings</span></label>
+                    <input type="text" class="form-control" placeholder="Monthly Savings">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <!--Space-->
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <fieldset class="form-group">
+                        <div class="row">
+                            <legend class="col-form-label col-sm-4 pt-0">Gender</legend>
+                                <div class="col-sm-10">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="grid1" id="gridRadios1" value="option1">
+                                    <label class="form-check-label" for="gridRadios1">
+                                    Male
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="grid1" id="gridRadios2" value="option2">
+                                    <label class="form-check-label" for="gridRadios2">
+                                    Female
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>   
+                </div>
+            <div class="col-md-4 col-sm-12">
+                <fieldset class="form-group">
+                        <div class="row">
+                            <legend class="col-form-label col-sm-4 pt-0">Occupation</legend>
+                                <div class="col-sm-10">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="grid2" id="gridRadios3" value="option3">
+                                    <label class="form-check-label" for="gridRadios3">
+                                    Salaried
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="grid2" id="gridRadios4" value="option4">
+                                    <label class="form-check-label" for="gridRadios4">
+                                    Self Employed
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>   
+                </div>
+                <!--Space-->
+                <div class="col-md-3">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <label for="inputname"><span>Full Name<span></label>
+                    <input type="text" class="form-control" placeholder="Full Name (As in PAN Card)">
+                </div>
+                <div class="col-md-4">
+                    <!--Blank-->            
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <label for="inputname"><span>PAN Card Number<span></label>
+                    <input type="text" class="form-control" placeholder="PAN Card Number">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <label for="inputname"><span>Date of Birth<span></label>
+                    <input type="text" class="form-control" placeholder="(DD/MM/YY) Format">
+                </div>
+                <div class="col-md-4">
+                    <!--Blank-->            
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <label for="inputname"><span>Current Residence Pin Code<span></label>
+                    <input type="text" class="form-control" placeholder="Current Residence Pin Code">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <label for="inputname"><span>Email ID<span></label>
+                    <input type="text" class="form-control" placeholder="Email ID">
+                </div>
+                <div class="col-md-4">
+                    <!--Blank-->            
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <label for="inputname"><span>Mobile Number<span></label>
+                    <input type="text" class="form-control" placeholder="Mobile Number">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <button type="button" class="btn btn-block btn-success">
+                        Get Report
+                    </button>                
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+       
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>
