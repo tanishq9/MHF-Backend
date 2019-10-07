@@ -5,17 +5,19 @@ $(document).ready(function(){
     var button=$('#reportbtn');
     var amount=$('#amt');
     var pan=$('#pannum');
-
+    var email=$('#email');
 
     button.click(function(){
         console.log('Button clicked.');
         console.log(amount.val());
         console.log(pan.val());
+        console.log(email.val());
         var obj={
             amt:amount.val(),
-            pn:pan.val()
+            pn:pan.val(),
+            em:email.val()
         };
-        if(amount.val()=='' || pan.val()==''){
+        if(amount.val()=='' || pan.val()=='' || email.val()==''){
             console.log('Empty Field(s)');
             myFunction();
         }else{

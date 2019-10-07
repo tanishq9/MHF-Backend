@@ -23,6 +23,7 @@ app.use('/',express.static(__dirname+'/public'));
 app.post('/report',function(req,res){
     var amount=req.body.amt;
     var pan_num=req.body.pn;
+    var email=req.body.em;
     console.log(amount);
     console.log(pan_num);
     var gen = rn.generator({
@@ -49,7 +50,7 @@ app.post('/report',function(req,res){
     if(total_score>=75){
         var mailOptions = {
             from: 'mlhomefriend@gmail.com',
-            to: 'tanishqsaluja18@gmail.com',
+            to: email,
             subject: 'ML Home Friend Report',
             text: '',
             html:`<p>Greeting Ram,&nbsp;</p>
