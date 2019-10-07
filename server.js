@@ -53,14 +53,16 @@ app.post('/report',function(req,res){
             to: email,
             subject: 'ML Home Friend Report',
             text: '',
-            html:`<p>Greeting Ram,&nbsp;</p>
-                    <p>Your credit score is ${total_score}. Our suggestions :</p>
-                    <p>1.&nbsp;</p>
-                    <p>2.</p>
-                    <p>3.</p>
-                    <p>4.</p>
-                    <p>5.</p>
-                    <p>6.</p>`
+            html:`<p>Greetings Ram,&nbsp;</p>
+            <p>Your credit score is ${total_score}.</p>
+            <p>Our suggestions :</p>
+            <p>1. <a href="https://www.mahindralifespaces.com/real-estate-properties/chennai-property/happinest-avadi">Happinest, Avadi</a>&nbsp;</p>
+            <p>2. <a href="https://www.mahindralifespaces.com/real-estate-properties/gurgaon-property/aura-near-dwarka-expressway">Aura, Gurgaon </a></p>
+            <p>3. <a href="https://www.mahindraworldcity.com/chennai_portfolio/iris-court/"> Iris Court, Chennai</a></p>
+            <p>4. <a href="https://www.mahindralifespaces.com/real-estate-properties/gurgaon-property/luminare-golf-course-extension-road"> Luminare, Gurgaon </a></p>
+            <p>5. <a href="https://www.mahindralifespaces.com/real-estate-properties/hyderabad-property/ashvita-kukatpally"> Ashvita, Hyderabad</a></p>
+            <p>6. <a href="https://www.mahindralifespaces.com/real-estate-properties/pune-property/antheia-pimpri"> Antheia, Pune</a></p>
+            <p>Regards,<br />Mahindra Lifespaces</p>`
         };
     }
     else if(total_score>=50 && total_score<75){
@@ -69,13 +71,15 @@ app.post('/report',function(req,res){
             to: 'tanishqsaluja18@gmail.com',
             subject: 'ML Home Friend Report',
             text: '',
-            html:`<p>Greeting Ram,&nbsp;</p>
-            <p>Your credit score is ${total_score}. Our suggestions :</p>
-            <p>1.&nbsp;</p>
-            <p>2.</p>
-            <p>3.</p>
-            <p>4.</p>
-            <p>5.</p>`
+            html:`<p>Greetings Ram,&nbsp;</p>
+            <p>Your credit score is ${total_score}.</p>
+            <p>Our suggestions :</p>
+            <p>1. <a href="https://www.mahindralifespaces.com/real-estate-properties/chennai-property/happinest-avadi">Happinest, Avadi</a>&nbsp;</p>
+            <p>2. <a href="https://www.mahindralifespaces.com/real-estate-properties/gurgaon-property/aura-near-dwarka-expressway">Aura, Gurgaon </a></p>
+            <p>3. <a href="https://www.mahindraworldcity.com/chennai_portfolio/iris-court/"> Iris Court, Chennai</a></p>
+            <p>4. <a href="https://www.mahindralifespaces.com/real-estate-properties/gurgaon-property/luminare-golf-course-extension-road"> Luminare, Gurgaon </a></p>
+            <p>5. <a href="https://www.mahindralifespaces.com/real-estate-properties/hyderabad-property/ashvita-kukatpally"> Ashvita, Hyderabad</a></p>
+            <p>Regards,<br />Mahindra Lifespaces</p>`
         };
     }else if(total_score<50 && total_score>=25){
         var mailOptions = {
@@ -83,12 +87,14 @@ app.post('/report',function(req,res){
             to: 'tanishqsaluja18@gmail.com',
             subject: 'ML Home Friend Report',
             text: '',
-            html:`<p>Greeting Ram,&nbsp;</p>
-                    <p>Your credit score is ${total_score}. Our suggestions :</p>
-                    <p>1.&nbsp;</p>
-                    <p>2.</p>
-                    <p>3.</p>
-                    <p>4.</p>`
+            html:`<p>Greetings Ram,&nbsp;</p>
+            <p>Your credit score is ${total_score}.</p>
+            <p>Our suggestions :</p>
+            <p>1. <a href="https://www.mahindralifespaces.com/real-estate-properties/chennai-property/happinest-avadi">Happinest, Avadi</a>&nbsp;</p>
+            <p>2. <a href="https://www.mahindralifespaces.com/real-estate-properties/gurgaon-property/aura-near-dwarka-expressway">Aura, Gurgaon </a></p>
+            <p>3. <a href="https://www.mahindraworldcity.com/chennai_portfolio/iris-court/"> Iris Court, Chennai</a></p>
+            <p>4. <a href="https://www.mahindralifespaces.com/real-estate-properties/gurgaon-property/luminare-golf-course-extension-road"> Luminare, Gurgaon </a></p>
+            <p>Regards,<br />Mahindra Lifespaces</p>`
         };
     }else{
         var mailOptions = {
@@ -96,11 +102,13 @@ app.post('/report',function(req,res){
             to: 'tanishqsaluja18@gmail.com',
             subject: 'ML Home Friend Report',
             text: '',
-            html:`<p>Greeting Ram,&nbsp;</p>
-                    <p>Your credit score is ${total_score}. Our suggestions :</p>
-                    <p>1.&nbsp;</p>
-                    <p>2.</p>
-                    <p>3.</p>`
+            html:`<p>Greetings Ram,&nbsp;</p>
+            <p>Your credit score is ${total_score}.</p>
+            <p>Our suggestions :</p>
+            <p>1. <a href="https://www.mahindralifespaces.com/real-estate-properties/chennai-property/happinest-avadi">Happinest, Avadi</a>&nbsp;</p>
+            <p>2. <a href="https://www.mahindralifespaces.com/real-estate-properties/gurgaon-property/aura-near-dwarka-expressway">Aura, Gurgaon </a></p>
+            <p>3. <a href="https://www.mahindraworldcity.com/chennai_portfolio/iris-court/"> Iris Court, Chennai</a></p>
+            <p>Regards,<br />Mahindra Lifespaces</p>`
         };
     }
 

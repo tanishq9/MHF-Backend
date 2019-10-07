@@ -19,8 +19,9 @@ $(document).ready(function(){
         };
         if(amount.val()=='' || pan.val()=='' || email.val()==''){
             console.log('Empty Field(s)');
-            myFunction();
+            myFunction('Empty Fields(s)');
         }else{
+            myFunction('Email Send');
             $.post(
                 '/report',
                 obj,
@@ -38,9 +39,9 @@ $(document).ready(function(){
 
 });
 
-function myFunction() {
+function myFunction(data) {
     var x = document.getElementById("snackbar");
-    x.textContent = "Empty Field(s)"
+    x.textContent = data
     x.className = "show";
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 }
