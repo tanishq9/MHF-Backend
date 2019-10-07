@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Display|Big+Shoulders+Text|Roboto+Condensed|Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel=”stylesheet” href=”https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css”  crossorigin=”anonymous”>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/gif/png" href="images/mahareralogo.png">
+   
+    <title>E-Verify Seller Documents</title>
+
+    <style>
+        
+        *{
+            padding: 0.2rem;
+        }
+
+        .container{
+            padding-top: 5px;
+            background: #D3D3D3;
+            border: 0px solid #000;
+            padding: 10px 20px; 
+            -webkit-box-shadow: 10px 9px 27px 8px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 9px 27px 8px rgba(0,0,0,0.75);
+            box-shadow: 10px 9px 27px 8px rgba(0,0,0,0.75);
+        }
+
+        .container2{
+            background: #888888;
+            padding-top: 5px;
+            border: 0px solid #000;
+            padding: 10px 20px; 
+            color: white;
+            -webkit-box-shadow: 10px 9px 27px 8px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 9px 27px 8px rgba(0,0,0,0.75);
+            box-shadow: 10px 9px 27px 8px rgba(0,0,0,0.75);    
+        }
+
+        a{
+            color: #fff;
+        }
+        a:hover{
+            color: #fff;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        textarea {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding:0.5rem;
+            width: 100%;
+        }
+            
+        #pic{
+            display: none;
+            }
+            
+        .newbtn{
+            cursor: pointer;
+        }
+
+        #blah{
+            max-width: 500px;
+            max-height: 500px;
+            margin-top:20px;
+        }   
+        
+        @media(max-width: 1000px) {
+            span{
+                font-size: 15px;
+                font-weight: bold;
+            }
+        }
+
+        @media(min-width: 1000px){
+            .vl {
+                margin-top: 30px;
+                border-left: 2px solid #787A7D;
+                height: 180px;
+            }
+            span{
+                font-size: 15px;
+                font-weight: bold;
+            }
+
+            hr{
+                border-top: 2px solid #BD1D1D;
+            }
+        }
+
+            #snackbar {
+                visibility: hidden;
+                min-width: 250px;
+                margin-left: -125px;
+                background-color: #333;
+                color: #fff;
+                text-align: center;
+                border-radius: 2px;
+                padding: 16px;
+                position: fixed;
+                z-index: 1;
+                left: 50%;
+                bottom: 30px;
+                font-size: 17px;
+            }
+      
+        #snackbar.show {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @-webkit-keyframes fadein {
+        from {bottom: 0; opacity: 0;} 
+        to {bottom: 30px; opacity: 1;}
+        }
+
+        @keyframes fadein {
+        from {bottom: 0; opacity: 0;}
+        to {bottom: 30px; opacity: 1;}
+        }
+
+        @-webkit-keyframes fadeout {
+        from {bottom: 30px; opacity: 1;} 
+        to {bottom: 0; opacity: 0;}
+        }
+
+        @keyframes fadeout {
+        from {bottom: 30px; opacity: 1;}
+        to {bottom: 0; opacity: 0;}
+        }
+        .others {
+            color:#fff;
+        }
+
+    </style>
+</head>
+<body style="overflow-x:hidden;background: #787A7D">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 60px">
+        <a href="index.html" class="icon-link">
+            <i class="fa fa-home"></i>
+        </a>
+        <p class="navbar-brand mb-0 h1 navbar-center mx-auto">ML Saathi</p>
+    </nav>    
+    <br>
+    <div class="container text-center">
+            <div class="row">
+                <blockquote style="color: white;background:#BD1D1D;width:100%;font-weight: bold" class="text-center">Repairs & Maintenance</blockquote>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-lg-4">
+                    <select class="browser-default custom-select">
+                        <option selected>Select the Location</option>
+                        <option value="1">Bannerghatta</option>
+                    </select>
+                </div>
+                <div class="col-md-4 col-sm-4 col-lg-4">
+                </div>
+                <div class="col-md-4 col-sm-4 col-lg-4">
+                    <select class="browser-default custom-select">
+                        <option selected>Select the Plot No.</option>
+                        <option value="1">206</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-lg-4">
+                </div>
+                <div class="col-md-4 col-sm-4 col-lg-4">
+                    <button class="btn" style="background:white;color:black;" data-toggle="collapse" data-target="#data">Show</button>
+                </div>
+                <div class="col-md-4 col-sm-4 col-lg-4">
+                </div>
+            </div>
+        <br>
+        <div id="data" class="collapse">
+            <div class="row">
+                <div class="col-md-4 col-lg-4 col-sm-12">
+                    <blockquote style="color: white;background:#787A7D;width:100%;font-weight: bold" class="text-center" data-toggle="collapse" data-target="#logform"><a>Lodge A Ticket</a></blockquote>
+                </div>
+                <div class="col-md-4 col-lg-4 col-sm-12">
+                    <blockquote style="color: white;background:#787A7D;width:100%;font-weight: bold" class="text-center"><a>Open Issues</a></blockquote>
+                </div>
+                <div class="col-md-4 col-lg-4 col-sm-12">
+                    <blockquote style="color: white;background:#787A7D;width:100%;font-weight: bold" class="text-center"><a>Resolved Issues</a></blockquote>
+                </div>
+            </div>  
+        </div>
+        <div id="logform" class="collapse container2">
+            <div class="row">
+                <div class="col-md-4 col-lg-4">
+                    Category :
+                </div>
+                <div class="col-md-8 col-lg-8">
+                    <select class="browser-default custom-select">
+                        <option selected>Choose the Suitable Category</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-lg-4">
+                    Issue Type:
+                </div>
+                <div class="col-md-8 col-lg-8">
+                    <select class="browser-default custom-select">
+                        <option selected>Choose the Issue Type</option>
+                    </select>
+                </div>
+            </div>
+            <fieldset class="form-group">
+                <div class="row">
+                    <div class="col-md-3 col-lg-3"></div>
+                    <div class="col-md-3 col-lg-3">
+                        <div class="form-check">
+                            <input autocomplete="off" class="form-check-input" type="radio" name="grid2" id="gridRadios3" value="option3">
+                            <label class="form-check-label" for="gridRadios3">
+                            Personal
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <div class="form-check">
+                            <input autocomplete="off" class="form-check-input" type="radio" name="grid2" id="gridRadios4" value="option4">
+                            <label class="form-check-label" for="gridRadios4">
+                            Community
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>   
+        <div class="row">
+            Issue
+        </div>
+        <div class="row">
+            <textarea id="issuedes" rows=4 cols=50 style="width: 100%;" placeholder="(Type your Issue here)"></textarea>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-lg-3">
+                <div class="form-check">
+                    <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                    <label class="form-check-label" for="blankCheckbox">
+                        This is urgent
+                    </label>
+                </div>
+        </div>
+            <div class="col-md-3 col-lg-3">
+
+            </div>
+            <div class="col-md-3 col-lg-3">
+
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <button class="btn btn-secondary" style="background: black" onclick="clearIssue()">Cancel</button>
+                <button class="btn" style="background: #BD1D1D;color: white" onclick="myFunction()">Submit</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <br>
+    <br>
+    <div class="container text-center">
+            <div class="row">
+                <blockquote style="color: white;background:#BD1D1D;width:100%;font-weight: bold" class="text-center">Pay Bill</blockquote>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-lg-4">
+                    <select class="browser-default custom-select">
+                        <option selected>Select the Location</option>
+                        <option value="1">Bannerghatta</option>
+                    </select>
+                </div>
+                <div class="col-md-4 col-sm-4 col-lg-4">
+                </div>
+                <div class="col-md-4 col-sm-4 col-lg-4">
+                    <select class="browser-default custom-select">
+                        <option selected>Select the Plot No.</option>
+                        <option value="1">206</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-lg-4">
+                </div>
+                <div class="col-md-4 col-sm-4 col-lg-4">
+                    <button class="btn" style="background:white;color:black;" data-toggle="collapse" data-target="#due">Check</button>
+                </div>
+                <div class="col-md-4 col-sm-4 col-lg-4">
+                </div>
+            </div>
+        <br>
+        <div id="due" class="collapse">
+            <div class="row">
+                <div class="col-md-1 col-lg-1 col-sm-12">
+                </div>
+                <div class="col-md-2 col-lg-2 col-sm-12">
+                    <blockquote style="color: white;background:#787A7D;width:100%;font-weight: bold" class="text-center" data-toggle="collapse" data-target="#billform"><a>Dues</a></blockquote>
+                </div>
+                <div class="col-md-2 col-lg-2 col-sm-12">
+                    <blockquote style="color: white;background:#787A7D;width:100%;font-weight: bold" class="text-center"><a>Advance</a></blockquote>
+                </div>
+                <div class="col-md-2 col-lg-2 col-sm-12">
+                    <blockquote style="color: white;background:#787A7D;width:100%;font-weight: bold" class="text-center"><a>Deposits</a></blockquote>
+                </div>
+                <div class="col-md-2 col-lg-2 col-sm-12">
+                    <blockquote style="color: white;background:#787A7D;width:100%;font-weight: bold" class="text-center"><a>History</a></blockquote>
+                </div>
+                <div class="col-md-2 col-lg-2 col-sm-12">
+                    <blockquote style="color: white;background:#787A7D;width:100%;font-weight: bold" class="text-center"><a>EMI</a></blockquote>
+                </div>
+                <div class="col-md-1 col-lg-1 col-sm-12">
+                </div>
+            </div>  
+        </div>
+        <div id="billform" class="collapse container2">
+            <div class="row" style="background:black;">
+                <div class="col-md-4 col-lg-4">
+                    <blockquote style="background:#BD1D1D">Maintainence</blockquote>
+                </div>
+                <div class="col-md-4 col-lg-4">
+                </div>
+                <div class="col-md-4 col-lg-4">
+                    <blockquote style="background:#BD1D1D">3,000 INR</blockquote>
+                </div>
+            </div>
+            <br>
+            <div class="row" style="background:black">
+                <div class="col-md-4 col-lg-4">
+                    <blockquote style="background:#BD1D1D">Utilities</blockquote>
+                </div>
+                <div class="col-md-4 col-lg-4">
+                </div>
+                <div class="col-md-4 col-lg-4">
+                    <blockquote style="background:#BD1D1D">No Dues</blockquote>
+                </div>
+            </div>
+            <br>
+            <div class="row text-center" style="align-items: center;justify-content: center;justify-items: center">
+                <button class="btn" style="background:#BD1D1D;color:white;width: 75%;">Pay Now</button>
+            </div>
+        </div>
+    </div>    
+    <br>
+    <br>
+    <div class="container text-center">
+            <div class="row">
+                <blockquote style="color: white;background:#BD1D1D;width:100%;font-weight: bold" class="text-center">Neighbor Connect</blockquote>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-lg-4">
+                    <select class="browser-default custom-select">
+                        <option selected>Select the Location</option>
+                        <option value="1">Bannerghatta</option>
+                    </select>
+                </div>
+                <div class="col-md-4 col-sm-4 col-lg-4">
+                </div>
+                <div class="col-md-4 col-sm-4 col-lg-4">
+                    <select class="browser-default custom-select">
+                        <option selected>Select the Plot No.</option>
+                        <option value="1">206</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-lg-4">
+                </div>
+                <div class="col-md-4 col-sm-4 col-lg-4">
+                    <button class="btn" style="background:white;color:black;" data-toggle="collapse" data-target="#ngbhr">Show</button>
+                </div>
+                <div class="col-md-4 col-sm-4 col-lg-4">
+                </div>
+            </div>
+        <br>
+        <div id="ngbhr" class="collapse">
+            <div class="row">
+                <blockquote style="color: white;background:#787A7D;width:100%;font-weight: bold" class="text-center">Discussion Forum</blockquote>
+            </div>
+            <div class="row">
+                <div class="col-md-2 col-lg-2 col-sm-12">
+                    <blockquote style="color: white;background:#BD1D1D;width:100%;font-weight: bold" class="text-center" data-toggle="collapse" data-target="#conversation"><a>Feed</a></blockquote>
+                </div>
+                <div class="col-md-2 col-lg-2 col-sm-12">
+                    <blockquote style="color: white;background:#BD1D1D;width:100%;font-weight: bold" class="text-center"><a>Groups</a></blockquote>
+                </div>
+                <div class="col-md-2 col-lg-2 col-sm-12">
+                    <blockquote style="color: white;background:#BD1D1D;width:100%;font-weight: bold" class="text-center"><a>Photos</a></blockquote>
+                </div>    
+                <div class="col-md-2 col-lg-2 col-sm-12">
+                    <blockquote style="color: white;background:#BD1D1D;width:100%;font-weight: bold" class="text-center"><a>Polls</a></blockquote>
+                </div>
+                <div class="col-md-2 col-lg-2 col-sm-12">
+                    <blockquote style="color: white;background:#BD1D1D;width:100%;font-weight: bold" class="text-center"><a>Events</a></blockquote>
+                </div>
+                <div class="col-md-2 col-lg-2 col-sm-12">
+                    <blockquote style="color: white;background:#BD1D1D;width:100%;font-weight: bold" class="text-center"><a>Directory</a></blockquote>
+                </div>
+            </div>  
+        </div>
+        <div id="conversation" class="collapse container2 text-center">
+            <button class="btn btn-success" style="color: white;width:100%;font-weight: bold" class="text-center">
+                <i class="fa fa-comments"></i>
+                <br>
+                Start Conversation
+            </button>
+        </div>
+    </div>
+    <div id="snackbar"></div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("snackbar");
+            x.textContent = "Issue submitted."
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        }   
+        function clearIssue(){
+            $('#issuedes').val('');
+        }
+    </script>
+</body>
+</html>

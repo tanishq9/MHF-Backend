@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/gif/png" href="images/mahareralogo.png">
+    
+    <title>E-Verify Seller Documents</title>
+
+    <style>
+        
+        *{
+            padding: 0.2rem;
+        }
+
+        .container{
+            padding-top: 5px;
+            background: #D3D3D3;
+            border: 0px solid #000;
+            padding: 30px 80px; 
+            -webkit-box-shadow: 10px 9px 27px 8px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 9px 27px 8px rgba(0,0,0,0.75);
+            box-shadow: 10px 9px 27px 8px rgba(0,0,0,0.75);
+        }
+
+        a{
+            color: #fff;
+        }
+
+        a:hover{
+            color: #fff;
+        }
+
+        /* Tooltip container */
+        .tt {
+            
+              position: relative;
+              display: inline-block;
+              border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+            }
+            
+            /* Tooltip text */
+            .tt .tooltiptext {
+                width: 300px;
+                bottom: 100%;
+                left: 50%;
+                margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+              visibility: hidden;
+              background-color: black;
+              color: #fff;
+              padding: 5px 0;
+              border-radius: 6px;
+             
+              /* Position the tooltip text - see examples below! */
+              position: absolute;
+              z-index: 1;
+            }
+            
+            /* Show the tooltip text when you mouse over the tooltip container */
+            .tt:hover .tooltiptext {
+              visibility: visible;
+            }
+
+            .tooltiptext{
+                font-size: 1rem;
+            }
+    </style>
+</head>
+<body style="overflow-x:hidden;background: #787A7D">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 60px">
+        <a href="index.html" class="icon-link">
+            <i class="fa fa-home"></i>
+        </a>
+        <p class="navbar-brand mb-0 h1 navbar-center mx-auto">E-Verify Seller Documents</p>
+    </nav>    
+    <br>
+    <!--Add card here for asset id and defect details-->
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-lg-6">
+                <select class="browser-default custom-select">
+                    <option selected>Select the Location</option>
+                    <option value="1">Bannerghatta</option>
+                </select>
+            </div>
+            <div class="col-md-6 col-sm-6 col-lg-6">
+                <select class="browser-default custom-select">
+                    <option selected>Select the Plot No.</option>
+                    <option value="1">206</option>
+                </select>
+            </div>        
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-lg-4">
+            </div>
+            <div class="col-md-4 col-sm-4 col-lg-4">
+                <button class="btn" style="background:white;color:black;" data-toggle="collapse" data-target="#data">View</button>
+            </div>
+            <div class="col-md-4 col-sm-4 col-lg-4">
+            </div>
+        </div>
+    <br>
+
+    <div class="collapse text-center" id="data">
+        <!--<div class="row text-center">
+            <div class="col-md-3 col-lg-3 col-sm-0">
+            </div>
+            <div class="col-md-3 col-lg-3 col-sm-12">
+                <center>
+                    <img id="blah" src="images/sellerpic.png">
+                    <br>
+                    <span>Select the Document</span>
+                </center>
+                <br>
+            </div>
+            <div class="vl"></div>
+            <div class="col-md-3 col-lg-3 col-sm-12">
+                    <center>
+                    <img id="blah" src="images/reviewpic.png">
+                    <br>
+                    <span>Request Preview</span>
+                    </center>  
+            </div>
+            <div class="col-md-3 col-lg-3 col-sm-0">
+            </div>        
+        </div>-->
+       <div class="row text-center">
+           
+            <div class="col-md-6 col-lg-3 col-sm-12">
+                <a class="tt" style="background: #787A7D;color: #fff">Sale Deed
+                <span class="tooltiptext">
+                        The sale deed document is a valid proof of ownership of the immovable property with all relevant information
+                        about the buyer.
+                </span>
+                </a>
+                <br>
+                <a class="btn" style="background: #BD1D1D;color: #fff" href="images/sdeed.pdf" target="_blank">Request Preview</a>
+            </div>
+            <div class="col-md-6 col-lg-3 col-sm-12">
+                <a  style="background: #787A7D;color: #fff">Mother Deed</a>
+                <br>
+                <a class="btn" style="background: #BD1D1D;color: #fff">Request Preview</a>
+            </div>
+            <div class="col-md-6 col-lg-3 col-sm-12">
+                <a  style="background: #787A7D;color: #fff">Building Approval Plan</a>
+                <br>
+                <a class="btn" style="background:  #BD1D1D;color: #fff">Request Preview</a>
+            </div>
+            <div class="col-md-6 col-lg-3 col-sm-12">
+                <a style="background: #787A7D;color: #fff">Commencement Certificate</a>
+                <br>
+                <a class="btn" style="background:  #BD1D1D;color: #fff">Request Preview</a>
+            </div>
+        </div>
+        <div class="row text-center">
+                <div class="col-md-6 col-lg-3 col-sm-12">
+                    <a style="background: #787A7D;color: #fff">Power Of Attorney</a>
+                    <br>
+                    <a class="btn" style="background:  #BD1D1D;color: #fff">Request Preview</a>
+                </div>
+                <div class="col-md-6 col-lg-3 col-sm-12">
+                <a style="background: #787A7D;color: #fff">Khata Certificate</a>
+                <br>
+                <a class="btn" style="background:  #BD1D1D;color: #fff">Request Preview</a>
+                </div>
+            <div class="col-md-6 col-lg-3 col-sm-12">
+                <a style="background: #787A7D;color: #fff">Conversion Certificate</a>
+                <br>
+                <a class="btn" style="background:  #BD1D1D;color: #fff">Request Preview</a>
+                </div>
+            <div class="col-md-6 col-lg-3 col-sm-12">
+                    <a style="background: #787A7D;color: #fff">Encumbrance Certificate</a>
+                    <br>
+                    <a class="btn" style="background:  #BD1D1D;color: #fff">Request Preview</a>
+                </div>
+        </div>
+        <div class="row text-center">
+                <div class="col-md-6 col-lg-3 col-sm-12">
+                <a style="background: #787A7D;color: #fff">Tax Receipts</a>
+                <br>
+                <a class="btn" style="background:  #BD1D1D;color: #fff">Request Preview</a>
+                </div>
+                <div class="col-md-6 col-lg-3 col-sm-12">
+                <a style="background: #787A7D;color: #fff">Completion Certificate</a>
+                <br>
+                <a class="btn" style="background:  #BD1D1D;color: #fff">Request Preview</a>
+                </div>
+            <div class="col-md-6 col-lg-3 col-sm-12">
+                <a style="background: #787A7D;color: #fff">Occupancy Certificate</a>
+                <br>
+                <a class="btn" style="background:  #BD1D1D;color: #fff">Request Preview</a>
+                </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

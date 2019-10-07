@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Financial Stocktaking</title>
+    <link rel="icon" type="image/gif/png" href="images/mahareralogo.png">
+
     <style>
         *{
             padding: 0.2rem;
@@ -16,6 +18,7 @@
             color: #000;
         }
         .form-groupbox{
+            background: #D3D3D3;
             border: 0px solid #000;
             padding: 20px 30px; 
             -webkit-box-shadow: 10px 9px 27px 8px rgba(0,0,0,0.75);
@@ -28,9 +31,50 @@
         a:hover{
             color: #fff;
         }
+        #snackbar {
+                visibility: hidden;
+                min-width: 250px;
+                margin-left: -125px;
+                background-color: #333;
+                color: #fff;
+                text-align: center;
+                border-radius: 2px;
+                padding: 16px;
+                position: fixed;
+                z-index: 1;
+                left: 50%;
+                bottom: 30px;
+                font-size: 17px;
+            }
+      
+        #snackbar.show {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @-webkit-keyframes fadein {
+        from {bottom: 0; opacity: 0;} 
+        to {bottom: 30px; opacity: 1;}
+        }
+
+        @keyframes fadein {
+        from {bottom: 0; opacity: 0;}
+        to {bottom: 30px; opacity: 1;}
+        }
+
+        @-webkit-keyframes fadeout {
+        from {bottom: 30px; opacity: 1;} 
+        to {bottom: 0; opacity: 0;}
+        }
+
+        @keyframes fadeout {
+        from {bottom: 30px; opacity: 1;}
+        to {bottom: 0; opacity: 0;}
+        }
     </style>
 </head>
-<body class="bg-light">
+<body style="overflow-x:hidden;background: #787A7D">
     <nav class="navbar navbar-dark bg-dark">
         <a href="index.html" class="icon-link">
             <i class="fa fa-home"></i>
@@ -43,15 +87,15 @@
             <div class="row">
                 <div class="col-md-4 col-sm-12">
                     <label for="inputname"><span>Monthly Income<span></label>
-                    <input type="text" class="form-control" placeholder="Monthly Income">
+                    <input autocomplete="off" type="text" class="form-control" placeholder="Monthly Income">
                 </div>
                 <div class="col-md-4 col-sm-12">
                     <label for="inputname"><span>Monthly Expenses</span></label>
-                    <input type="text" class="form-control" placeholder="Monthly Expenses">
+                    <input autocomplete="off" type="text" class="form-control" placeholder="Monthly Expenses">
                 </div>
                 <div class="col-md-4 col-sm-12">
                     <label for="inputname"><span>Monthly Savings</span></label>
-                    <input type="text" class="form-control" placeholder="Monthly Savings">
+                    <input autocomplete="off" type="text" class="form-control" placeholder="Monthly Savings">
                 </div>
             </div>
             <br>
@@ -65,13 +109,13 @@
                             <legend class="col-form-label col-md-6 col-sm-6 pt-0">Gender</legend>
                                 <div class="col-sm-10">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="grid1" id="gridRadios1" value="option1">
+                                    <input autocomplete="off" class="form-check-input" type="radio" name="grid1" id="gridRadios1" value="option1">
                                     <label class="form-check-label" for="gridRadios1">
                                     Male
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="grid1" id="gridRadios2" value="option2">
+                                    <input autocomplete="off" class="form-check-input" type="radio" name="grid1" id="gridRadios2" value="option2">
                                     <label class="form-check-label" for="gridRadios2">
                                     Female
                                     </label>
@@ -86,13 +130,13 @@
                             <legend class="col-form-label col-md-6 col-sm-6 pt-0">Occupation</legend>
                                 <div class="col-sm-10">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="grid2" id="gridRadios3" value="option3">
+                                    <input autocomplete="off" class="form-check-input" type="radio" name="grid2" id="gridRadios3" value="option3">
                                     <label class="form-check-label" for="gridRadios3">
                                     Salaried
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="grid2" id="gridRadios4" value="option4">
+                                    <input autocomplete="off" class="form-check-input" type="radio" name="grid2" id="gridRadios4" value="option4">
                                     <label class="form-check-label" for="gridRadios4">
                                     Self Employed
                                     </label>
@@ -109,55 +153,66 @@
             <div class="row">
                 <div class="col-md-5 col-sm-12">
                     <label for="inputname"><span>Full Name<span></label>
-                    <input type="text" class="form-control" placeholder="Full Name (As in PAN Card)">
+                    <input autocomplete="off" type="text" class="form-control" placeholder="Full Name (As in PAN Card)">
                 </div>
                 <div class="col-md-2">
                     <!--Blank-->            
                 </div>
                 <div class="col-md-5 col-sm-12">
                     <label for="inputname"><span>PAN Card Number<span></label>
-                    <input type="text" class="form-control" placeholder="PAN Card Number">
+                    <input id="pannum" autocomplete="off" type="text" class="form-control" placeholder="PAN Card Number">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-5 col-sm-12">
                     <label for="inputname"><span>Date of Birth<span></label>
-                    <input type="text" class="form-control" placeholder="(DD/MM/YY) Format">
+                    <input autocomplete="off" type="text" class="form-control" placeholder="(DD/MM/YY) Format">
                 </div>
                 <div class="col-md-2">
                     <!--Blank-->            
                 </div>
                 <div class="col-md-5 col-sm-12">
                     <label for="inputname"><span>Current Residence Pin Code<span></label>
-                    <input type="text" class="form-control" placeholder="Current Residence Pin Code">
+                    <input autocomplete="off" type="text" class="form-control" placeholder="Current Residence Pin Code">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-5 col-sm-12">
                     <label for="inputname"><span>Email ID<span></label>
-                    <input type="text" class="form-control" placeholder="Email ID">
+                    <input autocomplete="off" type="text" class="form-control" placeholder="Email ID">
                 </div>
                 <div class="col-md-2">
                     <!--Blank-->            
                 </div>
                 <div class="col-md-5 col-sm-12">
                     <label for="inputname"><span>Mobile Number<span></label>
-                    <input type="text" class="form-control" placeholder="Mobile Number">
+                    <input autocomplete="off" type="text" class="form-control" placeholder="Mobile Number">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 col-lg-3 col-sm-12">
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 text-center">
+                    <label for="inputname"><span>How much are you willing to invest?<span></label>
+                    <input id="amt" autocomplete="off" type="text" class="form-control" placeholder="Amount in INR">        
+                </div>
+                <div class="col-md-5 col-sm-12">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-12 col-sm-12">
-                    <button type="button" class="btn btn-block btn-success">
-                        Get Report
+                    <button id="reportbtn" type="button" class="btn btn-block" style="background: #BD1D1D">
+                        <span style="color: #fff">Get Report<span>
                     </button>                
                 </div>
             </div>
         </form>
     </div>
-
+    <div id="snackbar"></div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

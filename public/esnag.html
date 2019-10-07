@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Display|Big+Shoulders+Text|Roboto+Condensed|Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel=”stylesheet” href=”https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css”  crossorigin=”anonymous”>
+    
+    <script type=”text/javascript” src=”js/bootstrap-filestyle.min.js”> </script>    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="icon" type="image/gif/png" href="images/mahareralogo.png">
+
+    <title>E-Snag</title>
+
+    <style>
+        
+        *{
+            padding: 0.2rem;
+        }
+
+        .form-groupbox{
+            padding-top: 5px;
+            background: #D3D3D3;
+            border: 0px solid #000;
+            padding: 10px 20px; 
+            -webkit-box-shadow: 10px 9px 27px 8px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 9px 27px 8px rgba(0,0,0,0.75);
+            box-shadow: 10px 9px 27px 8px rgba(0,0,0,0.75);
+        }
+
+        a{
+            color: #fff;
+        }
+        a:hover{
+            color: #fff;
+        }
+
+        textarea {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding:0.5rem;
+            width: 100%;
+        }
+
+        
+        #pic{
+            display: none;
+            }
+            
+        .newbtn{
+            cursor: pointer;
+        }
+
+        #blah{
+            border: 1px dotted #000;
+            max-width: 500px;
+            max-height: 500px;
+            margin-top:20px;
+        }   
+    
+    
+    </style>
+</head>
+<body style="overflow-x:hidden;background: #787A7D">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 60px">
+        <a href="index.html" class="icon-link">
+            <i class="fa fa-home"></i>
+        </a>
+        <p class="navbar-brand mb-0 h1 navbar-center mx-auto">E-Snag</p>
+    </nav>    
+    <br>
+
+    <!--Add card here for asset id and defect details-->
+
+    <div class="container">
+        <blockquote class="blockquote">
+            <form class="form-groupbox">
+                <p class="mb-0 text-center" style="font-weight: bold;">Asset ID #D2-201</p>
+            </form>
+        </blockquote>
+        <blockquote class="blockquote">
+            <form class="form-groupbox" style="background:#BD1D1D">
+                <p class="mb-0 text-center" style="color: #fff;font-weight: bold;">Defect Details</p>
+            </form>
+        </blockquote>
+        <form name="myform" class="form-groupbox">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <center>
+                    <label class=newbtn>
+                        <img id="blah" src="images/uploadsig.svg">
+                        <input id="pic" class='pis' onchange="readURL(this);" type="file" >
+                    </label>
+                    <br>
+                    <span>(Upload Photo)</span>
+                    </center>           
+                </div>
+            </div>    
+            
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12" style="margin-top: 25px">
+                    <center>
+                    <textarea rows="4" cols="50" placeholder="Type your comment here"></textarea> 
+                    </center>          
+                </div>  
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <button type="button" class="btn btn-block" style="background: #BD1D1D">
+                        <span style="color: #fff;font-weight: bold;">SEND NOW</span>
+                    </button>                
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <!--<script>
+        // Add the following code if you want the name of the file appear on select
+        $(".custom-file-input").on("change", function() {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+    </script>-->
+
+    <script>
+        $('.newbtn').bind("click" , function () {
+            $('#pic').click();
+        });
+        
+        function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+    
+                    reader.onload = function (e) {
+                        $('#blah')
+                            .attr('src', e.target.result);
+                    };
+    
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+    </script>
+
+</body>
+</html>
