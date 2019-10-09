@@ -68,7 +68,7 @@ app.post('/report',function(req,res){
     else if(total_score>=50 && total_score<75){
         var mailOptions = {
             from: 'mlhomefriend@gmail.com',
-            to: 'tanishqsaluja18@gmail.com',
+            to: email,
             subject: 'ML Home Friend Report',
             text: '',
             html:`<p>Greetings Ram,&nbsp;</p>
@@ -84,7 +84,7 @@ app.post('/report',function(req,res){
     }else if(total_score<50 && total_score>=25){
         var mailOptions = {
             from: 'mlhomefriend@gmail.com',
-            to: 'tanishqsaluja18@gmail.com',
+            to: email,
             subject: 'ML Home Friend Report',
             text: '',
             html:`<p>Greetings Ram,&nbsp;</p>
@@ -99,7 +99,7 @@ app.post('/report',function(req,res){
     }else{
         var mailOptions = {
             from: 'mlhomefriend@gmail.com',
-            to: 'tanishqsaluja18@gmail.com',
+            to: email,
             subject: 'ML Home Friend Report',
             text: '',
             html:`<p>Greetings Ram,&nbsp;</p>
