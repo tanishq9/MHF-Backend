@@ -27,6 +27,7 @@ $(document).ready(function(){
                 obj,
                 function(data){
                     console.log(data);
+                    myFunction('Email Sent');
                 }
             )
         }
