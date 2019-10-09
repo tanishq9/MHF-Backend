@@ -26,7 +26,7 @@ $(document).ready(function(){
                 '/report',
                 obj,
                 function(data){
-                    console.log('Email sent.');
+                    console.log(data);
                 }
             )
         }
