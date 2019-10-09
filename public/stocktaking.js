@@ -21,7 +21,7 @@ $(document).ready(function(){
             console.log('Empty Field(s)');
             myFunction('Empty Fields(s)');
         }else{
-            myFunction('Email Send');
+            myFunction('Email Sent');
             $.post(
                 '/report',
                 obj,
