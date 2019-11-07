@@ -21,14 +21,34 @@ $(document).ready(function(){
             console.log('Empty Field(s)');
             myFunction('Empty Fields(s)');
         }else{
-            $.post(
-                '/report',
-                obj,
-                function(data){
-                    console.log(data);
-                    myFunction('Email Sent');
+//            /^[a-zA-Z]+$/.test(pan.val()
+            console.log(pan.val().length);
+            if(pan.val().length==10){
+                let part1=pan.val().charAt(0)+pan.val().charAt(1)+pan.val().charAt(2)+pan.val().charAt(3)+pan.val().charAt(4);
+                let part2=pan.val().charAt(5)+pan.val().charAt(6)+pan.val().charAt(7)+pan.val().charAt(8);
+                let part3=pan.val().charAt(9);
+                console.log(part1);
+                console.log(part2);
+                console.log(part3);
+        
+                if(/^[a-zA-Z]+$/.test(part1) && /^[a-zA-Z]+$/.test(part3) && $.isNumeric(part2)){
+                    myFunction('Correct Details');
+                    $.post(
+                        '/report',
+                        obj,
+                        function(data){
+                            console.log(data);
+                            myFunction('Email Sent');
+                        }
+                    )
+                }else{
+                    console.log('Invalid PAN Card Number');  
+                    myFunction('Invalid PAN Card Number'); 
                 }
-            )
+            }else{
+                console.log('Invalid PAN Card Number');  
+                myFunction('Invalid PAN Card Number'); 
+            }
         }
     });
     AOS.init({

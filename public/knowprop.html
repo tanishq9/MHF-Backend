@@ -178,9 +178,9 @@
     <div class="container text-center">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-lg-12">
-                <select class="browser-default custom-select">
-                    <option selected>Select Property</option>
-                    <option value="1">Mahindra Lifespace Windchimes</option>
+                <select id="selector" class="browser-default custom-select">
+                    <option id="default" value="0">Select Property</option>
+                    <option id="mahindra" value="1">Mahindra Lifespace Windchimes</option>
                 </select>
             </div>  
         </div>
@@ -189,15 +189,16 @@
             <div class="col-md-4 col-sm-4 col-lg-4">
             </div>
             <div class="col-md-4 col-sm-4 col-lg-4">
-                <button class="btn" style="background:white;color:black;" data-toggle="collapse" data-target="#data">Show</button>
+                <!--data-toggle="collapse" data-target="#data"-->
+                <button id="showbtn" class="btn" style="background:white;color:black;">Show</button>
             </div>
             <div class="col-md-4 col-sm-4 col-lg-4">
             </div>
         </div>
         <br>
-        <div class="row" id="data">
+        <div class="row collapse" id="data">
             <div class="col-md-12 col-sm-12 col-lg-12">
-                <div id="data" class="collapse">
+                <div>
                     <blockquote style="background: #787A7D;color: white;width: 100%" class="lead">Address : <a>Mahindra Lifespace Windchimes</a>,<a>Bannerghatta Main Rd</a>,<a>Araka Mico Layout</a>, <a>Arekere</a>, <a>Bengaluru</a>, <a>Karnataka</a> <a>560076​</a>
                     </blockquote>
                     <blockquote style="background: #BD1D1D;color: white;width: 100%">Basic</blockquote>
@@ -208,17 +209,35 @@
                     <img src="images/propdetailsother.png" width="75%" height="50%">  
                 </div>
             </div>
+            <button class="btn button" style="background: #BD1D1D;color: white;width: 100%;font-size: 1.2rem;" data-toggle="modal" data-target="#exampleModal">Schedule Site Visit</button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document" style="width: 100%">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel" style="text-align: center">Fix timings for Site Visit</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center" style="width: 100%">
+                        <textarea rows="3" cols="50" style="width: 100%" placeholder="Enter your message ..."></textarea>
+                        <input style="width: 75%" id="timepicker" width="276" />
+                        <script>
+                            $('#timepicker').datetimepicker({
+                                uiLibrary: 'bootstrap4'
+                            });
+                        </script>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" onclick="myFunction('Details send on email');" class="btn" style="background: #BD1D1D;color: white;" data-dismiss="modal">Confirm</button>
+                </div>
+                </div>
+            </div>
+            </div>
         </div>
+        <div id="snackbar"></div>
     </div>
-
-    <script>
-        function myFunction() {
-            var x = document.getElementById("snackbar");
-            x.textContent = "Details send on your email. Please Check."
-            x.className = "show";
-            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-        }   
-    </script>
-    
+    <script src="knowprop.js"></script>    
 </body>
 </html>
