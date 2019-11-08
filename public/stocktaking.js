@@ -19,7 +19,7 @@ $(document).ready(function(){
         };
         if(amount.val()=='' || pan.val()=='' || email.val()==''){
             console.log('Empty Field(s)');
-            myFunction('Empty Fields(s)');
+            myFunction('Empty Field(s)');
         }else{
 //            /^[a-zA-Z]+$/.test(pan.val()
             console.log(pan.val().length);
