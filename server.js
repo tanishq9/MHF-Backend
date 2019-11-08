@@ -46,7 +46,7 @@ app.post('/report',function(req,res){
     console.log(amount);
     
     var total_score=pan_num+amount;
-    
+    total_score=total_score.toFixed(2);
     if(total_score>=75){
         var mailOptions = {
             from: 'mlhomefriend@gmail.com',
