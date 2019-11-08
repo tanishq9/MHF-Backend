@@ -24,6 +24,10 @@
             padding: 0.2rem;
         }
 
+        span{
+            color: black;
+        }
+
         .container{
             padding-top: 5px;
             background: #D3D3D3;
@@ -35,7 +39,7 @@
         }
 
         .container2{
-            background: #888888;
+            background: #fff;
             padding-top: 5px;
             border: 0px solid #000;
             padding: 10px 20px; 
@@ -144,6 +148,21 @@
             color:#fff;
         }
 
+        #pic{
+            display: none;
+            }
+            
+        .newbtn{
+            cursor: pointer;
+        }
+
+        #blah{
+            border: 1px dotted #000;
+            max-width: 200px;
+            max-height: 200px;
+            margin-top:20px;
+        }   
+
     </style>
 </head>
 <body style="overflow-x:hidden;background: #787A7D">
@@ -160,7 +179,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-lg-4">
-                    <select class="browser-default custom-select">
+                    <select id="sloc" class="browser-default custom-select">
                         <option selected>Select the Location</option>
                         <option value="1">Bannerghatta</option>
                     </select>
@@ -168,7 +187,7 @@
                 <div class="col-md-4 col-sm-4 col-lg-4">
                 </div>
                 <div class="col-md-4 col-sm-4 col-lg-4">
-                    <select class="browser-default custom-select">
+                    <select id="splot" class="browser-default custom-select">
                         <option selected>Select the Plot No.</option>
                         <option value="1">206</option>
                     </select>
@@ -178,7 +197,8 @@
                 <div class="col-md-4 col-sm-4 col-lg-4">
                 </div>
                 <div class="col-md-4 col-sm-4 col-lg-4">
-                    <button class="btn" style="background:white;color:black;" data-toggle="collapse" data-target="#data">Show</button>
+                    <!--data-toggle="collapse" data-target="#data"-->
+                    <button id="showbtn" class="btn" style="background:white;color:black;">Show</button>
                 </div>
                 <div class="col-md-4 col-sm-4 col-lg-4">
                 </div>
@@ -187,20 +207,21 @@
         <div id="data" class="collapse">
             <div class="row">
                 <div class="col-md-4 col-lg-4 col-sm-12">
-                    <blockquote style="color: white;background:#787A7D;width:100%;font-weight: bold" class="text-center" data-toggle="collapse" data-target="#logform"><a>Lodge A Ticket</a></blockquote>
+                    <!-- data-toggle="collapse" data-target="#logform" -->
+                    <blockquote id="lodgetext" style="color: white;background:#000;width:100%;font-weight: bold" class="text-center"><a>Lodge A Ticket</a></blockquote>
                 </div>
                 <div class="col-md-4 col-lg-4 col-sm-12">
-                    <blockquote style="color: white;background:#787A7D;width:100%;font-weight: bold" class="text-center"><a>Open Issues</a></blockquote>
+                    <blockquote style="color: white;background:#000;width:100%;font-weight: bold" class="text-center"><a>Open Issues</a></blockquote>
                 </div>
                 <div class="col-md-4 col-lg-4 col-sm-12">
-                    <blockquote style="color: white;background:#787A7D;width:100%;font-weight: bold" class="text-center"><a>Resolved Issues</a></blockquote>
+                    <blockquote style="color: white;background:#000;width:100%;font-weight: bold" class="text-center"><a>Resolved Issues</a></blockquote>
                 </div>
             </div>  
         </div>
         <div id="logform" class="collapse container2">
             <div class="row">
                 <div class="col-md-4 col-lg-4">
-                    Category :
+                    <span>Category :</span>
                 </div>
                 <div class="col-md-8 col-lg-8">
                     <select class="browser-default custom-select">
@@ -210,11 +231,21 @@
             </div>
             <div class="row">
                 <div class="col-md-4 col-lg-4">
-                    Issue Type:
+                    <span>Issue Type:</span>
                 </div>
                 <div class="col-md-8 col-lg-8">
                     <select class="browser-default custom-select">
                         <option selected>Choose the Issue Type</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-lg-4">
+                    <span>Time slot:</span>
+                </div>
+                <div class="col-md-8 col-lg-8">
+                    <select class="browser-default custom-select">
+                        <option selected>Choose a suitable time slot</option>
                     </select>
                 </div>
             </div>
@@ -225,7 +256,7 @@
                         <div class="form-check">
                             <input autocomplete="off" class="form-check-input" type="radio" name="grid2" id="gridRadios3" value="option3">
                             <label class="form-check-label" for="gridRadios3">
-                            Personal
+                            <span>Personal</span>
                             </label>
                         </div>
                     </div>
@@ -233,27 +264,36 @@
                         <div class="form-check">
                             <input autocomplete="off" class="form-check-input" type="radio" name="grid2" id="gridRadios4" value="option4">
                             <label class="form-check-label" for="gridRadios4">
-                            Community
+                            <span>Community</span>
                             </label>
                         </div>
                     </div>
                 </div>
             </fieldset>   
         <div class="row">
-            Issue
-        </div>
-        <div class="row">
-            <textarea id="issuedes" rows=4 cols=50 style="width: 100%;" placeholder="(Type your Issue here)"></textarea>
+            <div class="col-lg-4 col-md-4">
+                <center>
+                    <label class=newbtn>
+                        <img id="blah" src="images/uploadsig.svg">
+                        <input id="pic" class='pis' onchange="readURL(this);" type="file" >
+                    </label>
+                    <br>
+                    <span>(Upload Photo)</span>
+                </center>           
+            </div>
+            <div class="col-lg-8 col-md-8">
+                <textarea id="issuedes" rows=10 cols=50 style="width: 100%;" placeholder="(Type your Issue here)"></textarea>
+            </div>
         </div>
         <div class="row">
             <div class="col-md-3 col-lg-3">
                 <div class="form-check">
                     <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
                     <label class="form-check-label" for="blankCheckbox">
-                        This is urgent
+                        <span>This is urgent</span>
                     </label>
                 </div>
-        </div>
+            </div>
             <div class="col-md-3 col-lg-3">
 
             </div>
@@ -262,7 +302,7 @@
             </div>
             <div class="col-md-3 col-lg-3">
                 <button class="btn btn-secondary" style="background: black" onclick="clearIssue()">Cancel</button>
-                <button class="btn" style="background: #BD1D1D;color: white" onclick="myFunction()">Submit</button>
+                <button class="btn" style="background: #BD1D1D;color: white" onclick="myFunction('Issue submitted')">Submit</button>
             </div>
         </div>
     </div>
@@ -275,7 +315,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-lg-4">
-                    <select class="browser-default custom-select">
+                    <select id="sloc2" class="browser-default custom-select">
                         <option selected>Select the Location</option>
                         <option value="1">Bannerghatta</option>
                     </select>
@@ -283,7 +323,7 @@
                 <div class="col-md-4 col-sm-4 col-lg-4">
                 </div>
                 <div class="col-md-4 col-sm-4 col-lg-4">
-                    <select class="browser-default custom-select">
+                    <select id="splot2" class="browser-default custom-select">
                         <option selected>Select the Plot No.</option>
                         <option value="1">206</option>
                     </select>
@@ -293,7 +333,8 @@
                 <div class="col-md-4 col-sm-4 col-lg-4">
                 </div>
                 <div class="col-md-4 col-sm-4 col-lg-4">
-                    <button class="btn" style="background:white;color:black;" data-toggle="collapse" data-target="#due">Check</button>
+                    <!--data-toggle="collapse" data-target="#due"-->
+                    <button id="chkbtn" class="btn" style="background:white;color:black;">Check</button>
                 </div>
                 <div class="col-md-4 col-sm-4 col-lg-4">
                 </div>
@@ -304,19 +345,20 @@
                 <div class="col-md-1 col-lg-1 col-sm-12">
                 </div>
                 <div class="col-md-2 col-lg-2 col-sm-12">
-                    <blockquote style="color: white;background:#787A7D;width:100%;font-weight: bold" class="text-center" data-toggle="collapse" data-target="#billform"><a>Dues</a></blockquote>
+                    <!--data-toggle="collapse" data-target="#billform"-->
+                    <blockquote id="duebtn" style="color: white;background:#000;width:100%;font-weight: bold" class="text-center"><a>Dues</a></blockquote>
                 </div>
                 <div class="col-md-2 col-lg-2 col-sm-12">
-                    <blockquote style="color: white;background:#787A7D;width:100%;font-weight: bold" class="text-center"><a>Advance</a></blockquote>
+                    <blockquote style="color: white;background:#000;width:100%;font-weight: bold" class="text-center"><a>Advance</a></blockquote>
                 </div>
                 <div class="col-md-2 col-lg-2 col-sm-12">
-                    <blockquote style="color: white;background:#787A7D;width:100%;font-weight: bold" class="text-center"><a>Deposits</a></blockquote>
+                    <blockquote style="color: white;background:#000;width:100%;font-weight: bold" class="text-center"><a>Deposits</a></blockquote>
                 </div>
                 <div class="col-md-2 col-lg-2 col-sm-12">
-                    <blockquote style="color: white;background:#787A7D;width:100%;font-weight: bold" class="text-center"><a>History</a></blockquote>
+                    <blockquote style="color: white;background:#000;width:100%;font-weight: bold" class="text-center"><a>History</a></blockquote>
                 </div>
                 <div class="col-md-2 col-lg-2 col-sm-12">
-                    <blockquote style="color: white;background:#787A7D;width:100%;font-weight: bold" class="text-center"><a>EMI</a></blockquote>
+                    <blockquote style="color: white;background:#000;width:100%;font-weight: bold" class="text-center"><a>EMI</a></blockquote>
                 </div>
                 <div class="col-md-1 col-lg-1 col-sm-12">
                 </div>
@@ -325,23 +367,23 @@
         <div id="billform" class="collapse container2">
             <div class="row" style="background:black;">
                 <div class="col-md-4 col-lg-4">
-                    <blockquote style="background:#BD1D1D">Maintainence</blockquote>
+                    <blockquote style="background:#BD1D1D;color: #fff;">Maintainence</blockquote>
                 </div>
                 <div class="col-md-4 col-lg-4">
                 </div>
                 <div class="col-md-4 col-lg-4">
-                    <blockquote style="background:#BD1D1D">3,000 INR</blockquote>
+                    <blockquote style="background:#BD1D1D;color: #fff;">3,000 INR</blockquote>
                 </div>
             </div>
             <br>
             <div class="row" style="background:black">
                 <div class="col-md-4 col-lg-4">
-                    <blockquote style="background:#BD1D1D">Utilities</blockquote>
+                    <blockquote style="background:#BD1D1D;color: #fff;">Utilities</blockquote>
                 </div>
                 <div class="col-md-4 col-lg-4">
                 </div>
                 <div class="col-md-4 col-lg-4">
-                    <blockquote style="background:#BD1D1D">No Dues</blockquote>
+                    <blockquote style="background:#BD1D1D;color: #fff;">No Dues</blockquote>
                 </div>
             </div>
             <br>
@@ -358,7 +400,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-lg-4">
-                    <select class="browser-default custom-select">
+                    <select id="sloc3" class="browser-default custom-select">
                         <option selected>Select the Location</option>
                         <option value="1">Bannerghatta</option>
                     </select>
@@ -366,7 +408,7 @@
                 <div class="col-md-4 col-sm-4 col-lg-4">
                 </div>
                 <div class="col-md-4 col-sm-4 col-lg-4">
-                    <select class="browser-default custom-select">
+                    <select id="splot3" class="browser-default custom-select">
                         <option selected>Select the Plot No.</option>
                         <option value="1">206</option>
                     </select>
@@ -376,34 +418,36 @@
                 <div class="col-md-4 col-sm-4 col-lg-4">
                 </div>
                 <div class="col-md-4 col-sm-4 col-lg-4">
-                    <button class="btn" style="background:white;color:black;" data-toggle="collapse" data-target="#ngbhr">Show</button>
+                    <!--data-toggle="collapse" data-target="#ngbhr"-->
+                    <button id="ngbtn" class="btn" style="background:white;color:black;">Show</button>
                 </div>
                 <div class="col-md-4 col-sm-4 col-lg-4">
                 </div>
             </div>
         <br>
-        <div id="ngbhr" class="collapse">
+        <div id="ngbr" class="collapse">
             <div class="row">
-                <blockquote style="color: white;background:#787A7D;width:100%;font-weight: bold" class="text-center">Discussion Forum</blockquote>
+                <blockquote style="color: black;background:white;width:100%;font-weight: bold" class="text-center">Discussion Forum</blockquote>
             </div>
             <div class="row">
                 <div class="col-md-2 col-lg-2 col-sm-12">
-                    <blockquote style="color: white;background:#BD1D1D;width:100%;font-weight: bold" class="text-center" data-toggle="collapse" data-target="#conversation"><a>Feed</a></blockquote>
+                    <!--data-toggle="collapse" data-target="#conversation"-->
+                    <blockquote id="feed" style="color: white;background:#000;width:100%;font-weight: bold" class="text-center"><a>Feed</a></blockquote>
                 </div>
                 <div class="col-md-2 col-lg-2 col-sm-12">
-                    <blockquote style="color: white;background:#BD1D1D;width:100%;font-weight: bold" class="text-center"><a>Groups</a></blockquote>
+                    <blockquote style="color: white;background:#000;width:100%;font-weight: bold" class="text-center"><a>Groups</a></blockquote>
                 </div>
                 <div class="col-md-2 col-lg-2 col-sm-12">
-                    <blockquote style="color: white;background:#BD1D1D;width:100%;font-weight: bold" class="text-center"><a>Photos</a></blockquote>
+                    <blockquote style="color: white;background:#000;width:100%;font-weight: bold" class="text-center"><a>Photos</a></blockquote>
                 </div>    
                 <div class="col-md-2 col-lg-2 col-sm-12">
-                    <blockquote style="color: white;background:#BD1D1D;width:100%;font-weight: bold" class="text-center"><a>Polls</a></blockquote>
+                    <blockquote style="color: white;background:#000;width:100%;font-weight: bold" class="text-center"><a>Polls</a></blockquote>
                 </div>
                 <div class="col-md-2 col-lg-2 col-sm-12">
-                    <blockquote style="color: white;background:#BD1D1D;width:100%;font-weight: bold" class="text-center"><a>Events</a></blockquote>
+                    <blockquote style="color: white;background:#000;width:100%;font-weight: bold" class="text-center"><a>Events</a></blockquote>
                 </div>
                 <div class="col-md-2 col-lg-2 col-sm-12">
-                    <blockquote style="color: white;background:#BD1D1D;width:100%;font-weight: bold" class="text-center"><a>Directory</a></blockquote>
+                    <blockquote style="color: white;background:#000;width:100%;font-weight: bold" class="text-center"><a>Directory</a></blockquote>
                 </div>
             </div>  
         </div>
@@ -417,15 +461,131 @@
     </div>
     <div id="snackbar"></div>
     <script>
-        function myFunction() {
-            var x = document.getElementById("snackbar");
-            x.textContent = "Issue submitted."
-            x.className = "show";
-            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-        }   
+      
         function clearIssue(){
             $('#issuedes').val('');
         }
+        $('.newbtn').bind("click" , function () {
+            $('#pic').click();
+        });
+        
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        
+        $("#lodgetext").click(function(){
+            console.log("Lodge Text clicked");
+            if($("#logform").is(":visible")){
+                $("#lodgetext").css('color', 'white');
+                $("#logform").hide();
+            }else{
+                $("#logform").show();
+                $("#lodgetext").css('color', 'red');
+            }
+        });
+
+        $("#showbtn").click(function(){
+            
+            if($("#sloc").val()==1 && $("#splot").val()==1){
+                if($("#logform").is(":visible") && $("#data").is(":visible")){
+                    $("#logform").hide();
+                    $("#data").hide();
+                }
+                else if(!($("#data").is(":visible"))){
+                    $("#data").show();
+                    $("#lodgetext").css('color', 'white');
+                }
+                else if($("#data").is(":visible")){
+                    $("#data").hide();
+                    $("#lodgetext").css('color', 'white');
+                }                
+            }else{
+                $("#logform").hide();
+                $("#data").hide();
+                $("#lodgetext").css('color', 'white');
+                myFunction('Select the Field(s)')
+            }
+        });
+
+        $("#chkbtn").click(function(){
+            if($("#sloc2").val()==1 && $("#splot2").val()==1){
+                if($("#due").is(":visible") && $("#billform").is(":visible")){
+                    $('#due').hide();   
+                    $('#billform').hide();   
+                    $("#duebtn").css('color', 'white');
+                }
+                else if($('#due').is(":visible")){
+                    $('#due').hide();   
+                    $("#duebtn").css('color', 'white');
+                }
+                else if(!($("due").is(":visible"))){
+                    $('#due').show();    
+                }
+            }else{
+                $("#due").hide();
+                $("#billform").hide();
+                myFunction('Select the Field(s)')
+            }
+        });
+
+    
+        $("#duebtn").click(function(){
+            if($("#billform").is(":visible")){
+                $('#billform').hide();  
+                $("#duebtn").css('color', 'white');
+            }else{
+                $('#billform').show();
+                $("#duebtn").css('color', 'red');
+            }
+        });
+
+        $("#ngbtn").click(function(){
+            if($("#sloc3").val()==1 && $("#splot3").val()==1){
+                if($("#ngbr").is(":visible") && $("#conversation").is(":visible")){
+                    $("#ngbr").hide();
+                    $("#conversation").hide();
+                    $("#feed").css('color','white');
+                }
+                else if($("#ngbr").is(":visible")){
+                    $("#ngbr").hide();
+                    $("#feed").css('color','white');
+                }
+                else if(!($("#ngbr").is(":visible"))){
+                    $("#ngbr").show();
+                }
+            }else{
+                $("#feed").css('color','white');
+                $("ngbr").hide();
+                $("conversation").hide();
+                myFunction('Select the Field(s)')
+            }
+        });
+
+        $("#feed").click(function(){
+            if($("#conversation").is(":visible")){
+                $("#conversation").hide();
+                $("#feed").css('color','white');
+            }else{
+                $("#feed").css('color','red');
+                $("#conversation").show();
+            }
+        });
+
+        function myFunction(text) {
+            var x = document.getElementById("snackbar");
+            x.textContent = text
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        }   
+
     </script>
 </body>
 </html>

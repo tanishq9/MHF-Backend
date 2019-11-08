@@ -146,7 +146,7 @@
     <div class="container text-center">
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-lg-4">
-                    <select class="browser-default custom-select">
+                    <select id="sloc" class="browser-default custom-select">
                         <option selected>Select the Location</option>
                         <option value="1">Bannerghatta</option>
                     </select>
@@ -154,7 +154,7 @@
                 <div class="col-md-4 col-sm-4 col-lg-4">
                 </div>
                 <div class="col-md-4 col-sm-4 col-lg-4">
-                    <select class="browser-default custom-select">
+                    <select id="splot" class="browser-default custom-select">
                         <option selected>Select the Plot No.</option>
                         <option value="1">206</option>
                     </select>
@@ -164,7 +164,8 @@
                 <div class="col-md-4 col-sm-4 col-lg-4">
                 </div>
                 <div class="col-md-4 col-sm-4 col-lg-4">
-                    <button class="btn" style="background:white;color:black;" data-toggle="collapse" data-target="#data">Show</button>
+                    <!--data-toggle="collapse" data-target="#data"-->
+                    <button id="showbtn" class="btn" style="background:white;color:black;">Show</button>
                 </div>
                 <div class="col-md-4 col-sm-4 col-lg-4">
                 </div>
@@ -292,11 +293,34 @@
                 </table>
             </div>
     </div>
+    <div id="snackbar"></div>
     <script>
         $(".dropdown-menu li a").click(function(){
             var selText = $(this).text();
             $(this).parents('.btn-group').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
         });
+
+        $("#showbtn").click(function(){
+            if($("#sloc").val()==1 && $("#splot").val()==1){
+                if($("#data").is(":visible")){
+                    $("#data").hide();    
+                }else{
+                    $("#data").show();    
+                }
+            }else{
+                $("#data").hide();        
+                myFunction("Select the Field(s)");        
+            }
+        })
+
+        function myFunction(text) {
+            var x = document.getElementById("snackbar");
+            x.textContent = text
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        }   
+
+
     </script>
 </body>
 </html>
