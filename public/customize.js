@@ -23,7 +23,7 @@ $(document).ready(function(){
             }
         }else{
             $("#data").hide();
-            myFunction("Select the Fields")     
+            myFunction("Select the Field(s)")     
         }
     })
 
